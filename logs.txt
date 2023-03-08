@@ -1,0 +1,62 @@
+wget https://sourceforge.net/projects/boost/files/boost/1.69.0/boost_1_69_0.tar.gz
+
+tar -xf boost_1_69_0.tar.gz //"-xf"<->extarxt all files
+
+sudo apt install tree
+
+cd ~/boost_1_69_0/
+
+tree -a -L 1 //"-a"<->all files; "-L 1"<->Descend only level directories deep
+
+(RESULT: 6 directories, 12 files; ANSWER: 12 files)
+
+tree -a
+
+(RESULT: 5637 directories, 61191 files; ANSWER: 61191 files)
+
+tree -P "*.cpp" (ANS: 13774 files)
+
+tree -P "*.hpp" -P "*.h" (ANS: 15208 files)
+
+tree -I "*.hpp" -I "*.h" -I "*.cpp" (ANS: 32209 files)
+
+find $(pwd) -name any.hpp //pwd - Print the name of the current working directory
+
+RESULT:
+
+/home/totrg/boost_1_69_0/boost/spirit/home/support/algorithm/any.hpp
+
+/home/totrg/boost_1_69_0/boost/fusion/include/any.hpp
+
+/home/totrg/boost_1_69_0/boost/fusion/algorithm/query/detail/any.hpp
+
+/home/totrg/boost_1_69_0/boost/fusion/algorithm/query/any.hpp
+
+/home/totrg/boost_1_69_0/boost/type_erasure/any.hpp
+
+/home/totrg/boost_1_69_0/boost/proto/detail/any.hpp
+
+/home/totrg/boost_1_69_0/boost/hana/fwd/any.hpp
+
+/home/totrg/boost_1_69_0/boost/hana/any.hpp
+
+/home/totrg/boost_1_69_0/boost/xpressive/detail/utility/any.hpp
+
+/home/totrg/boost_1_69_0/boost/any.hpp
+
+grep -r "boost::asio" //"-r"<->recursive
+
+cd /home/totrg/boost_1_69_0/tools/build/
+
+./bootstrap.sh
+
+mkdir test0
+
+./b2 --prefix=test0
+
+mv test0 ~/boost-libs/
+
+du -a -h//Summarize disk usage of the set of FILEs, recursively for directories. all humreadable
+
+du -a -h | sort -r -h | head -10	//-r - reverse
+
